@@ -9,6 +9,7 @@
     
     <version name="0.1d" url="http://openacs.org/repository/download/apm/dotlrn-news-aggregator-0.1d.apm">
         <owner url="mailto:simon@bcuni.net">Simon Carstensen</owner>
+        <release-date>2003-11-10</release-date>
 
         <provides url="dotlrn-news-aggregator" version="0.1d"/>
         <requires url="dotlrn" version="1.0"/>
