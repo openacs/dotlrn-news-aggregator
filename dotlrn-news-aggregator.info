@@ -13,7 +13,8 @@
 
         <provides url="dotlrn-news-aggregator" version="0.1d"/>
         <requires url="dotlrn" version="1.0"/>
-        <requires url="news-aggregator" version="0.1d"/>
+        <requires url="news-aggregator" version="0.2d"/>
+        <requires url="news-aggregator-portlet" version="0.1"/>
 
         <callbacks>
           <callback type="after-install"  proc="dotlrn_news_aggregator::install"/>
