@@ -177,7 +177,7 @@ ad_proc -public dotlrn_news_aggregator::clone {
     set new_package_id [add_applet_to_community $new_community_id]
     set old_package_id [dotlrn_community::get_applet_package_id \
                             -community_id $old_community_id \
-Z                            -applet_key [applet_key]
+                            -applet_key [applet_key]
                        ]
 
     db_exec_plsql call_news_aggregator_clone {}
