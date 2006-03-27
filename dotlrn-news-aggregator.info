@@ -12,9 +12,9 @@
         <release-date>2005-11-01</release-date>
 
         <provides url="dotlrn-news-aggregator" version="2.2.0a1"/>
-        <requires url="dotlrn" version="1.0"/>
+        <requires url="dotlrn" version="2.2.0a1"/>
         <requires url="news-aggregator" version="0.2d"/>
-        <requires url="news-aggregator-portlet" version="0.1"/>
+        <requires url="news-aggregator-portlet" version="2.2.0a1"/>
 
         <callbacks>
           <callback type="after-install"  proc="dotlrn_news_aggregator::install"/>
