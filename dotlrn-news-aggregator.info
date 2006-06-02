@@ -7,11 +7,11 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>t</singleton-p>
     
-    <version name="2.2.0a1" url="http://openacs.org/repository/download/apm/dotlrn-news-aggregator-2.2.0a1.apm">
+    <version name="2.2.0b1" url="http://openacs.org/repository/download/apm/dotlrn-news-aggregator-2.2.0b1.apm">
         <owner url="mailto:simon@bcuni.net">Simon Carstensen</owner>
-        <release-date>2005-11-01</release-date>
+        <release-date>2006-06-01</release-date>
 
-        <provides url="dotlrn-news-aggregator" version="2.2.0a1"/>
+        <provides url="dotlrn-news-aggregator" version="2.2.0b1"/>
         <requires url="dotlrn" version="2.2.0a1"/>
         <requires url="news-aggregator" version="0.2d"/>
         <requires url="news-aggregator-portlet" version="2.2.0a1"/>
