@@ -28,7 +28,7 @@ ad_proc -public dotlrn_news_aggregator::my_package_key {} {
 ad_proc -public dotlrn_news_aggregator::get_pretty_name {} {
     returns the pretty name
 } {
-    return "#news-aggregator-portlet.pretty_name#"
+    return "News Aggregator"
 }
 
 ad_proc -public dotlrn_news_aggregator::add_applet {} {
@@ -49,7 +49,7 @@ ad_proc -public dotlrn_news_aggregator::add_applet_to_community {
     Add the news-aggregator applet to a specifc dotlrn community
 } {
     set portal_id [dotlrn_community::get_portal_id -community_id $community_id]
-    
+
     # create the news-aggregator package instance (all in one, I've mounted it)
     set package_id [dotlrn::instantiate_and_mount $community_id [package_key]]
 
@@ -65,25 +65,6 @@ ad_proc -public dotlrn_news_aggregator::add_applet_to_community {
     set args [ns_set create]
     ns_set put $args package_id $package_id
     add_portlet_helper $portal_id $args
-
-    #create a aggregator to avoid the "no aggregator"-error
-    #begin
-    set package_name [apm_instance_name_from_id [ad_conn package_id]]
-    set aggregator_name "${package_name} - #news-aggregator.pretty_name#"
-    set user_id [ad_conn user_id]
-    set aggregator_id [news_aggregator::aggregator::new \
-                                -aggregator_name $aggregator_name \
-                                -package_id $package_id \
-                                -public_p 0 \
-                                -creation_user $user_id \
-                           -creation_ip [ad_conn peeraddr]]
-        news_aggregator::aggregator::set_user_default -user_id $user_id \
-            -package_id $package_id -aggregator_id $aggregator_id
-        #load preinstalled subscriptions into aggregator
-        news_aggregator::aggregator::load_preinstalled_subscriptions \
-            -aggregator_id $aggregator_id \
-            -package_id $package_id
-    #end
 
     return $package_id
 }
