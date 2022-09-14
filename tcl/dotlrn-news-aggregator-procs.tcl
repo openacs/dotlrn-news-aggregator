@@ -1,12 +1,12 @@
 ad_library {
-    
+
     Procs to set up the dotLRN news aggregator applet
-    
+
     @author simon@collaboraid.biz
 }
 
 namespace eval dotlrn_news_aggregator {}
-    
+
 ad_proc -public dotlrn_news_aggregator::applet_key {} {
     What's my applet key?
 } {
@@ -38,7 +38,7 @@ ad_proc -public dotlrn_news_aggregator::add_applet {} {
 }
 
 ad_proc -public dotlrn_news_aggregator::remove_applet {} {
-    One time destroy. 
+    One time destroy.
 } {
     dotlrn_applet::remove_applet_from_dotlrn -applet_key [applet_key]
 }
@@ -49,7 +49,7 @@ ad_proc -public dotlrn_news_aggregator::add_applet_to_community {
     Add the news-aggregator applet to a specific dotlrn community
 } {
     set portal_id [dotlrn_community::get_portal_id -community_id $community_id]
-    
+
     # create the news-aggregator package instance (all in one, I've mounted it)
     set package_id [dotlrn::instantiate_and_mount $community_id [package_key]]
 
@@ -61,7 +61,7 @@ ad_proc -public dotlrn_news_aggregator::add_applet_to_community {
     news_aggregator_admin_portlet::add_self_to_page \
         -portal_id $admin_portal_id \
         -package_id $package_id
-    
+
     set args [ns_set create]
     ns_set put $args package_id $package_id
     add_portlet_helper $portal_id $args
@@ -145,8 +145,8 @@ ad_proc -public dotlrn_news_aggregator::remove_user_from_community {
 ad_proc -public dotlrn_news_aggregator::add_portlet {
     portal_id
 } {
-    A helper proc to add the underlying portlet to the given portal. 
-    
+    A helper proc to add the underlying portlet to the given portal.
+
     @param portal_id
 } {
     # simple, no type specific stuff, just set some dummy values
@@ -176,11 +176,11 @@ ad_proc -public dotlrn_news_aggregator::remove_portlet {
     portal_id
     args
 } {
-    A helper proc to remove the underlying portlet from the given portal. 
-    
+    A helper proc to remove the underlying portlet from the given portal.
+
     @param portal_id
     @param args A list of key-value pairs (possibly user_id, community_id, and more)
-} { 
+} {
     news_aggregator_portlet::remove_self_from_page \
         -portal_id $portal_id \
         -package_id [ns_set get $args package_id]
@@ -208,10 +208,8 @@ ad_proc -public dotlrn_news_aggregator::change_event_handler {
     event
     old_value
     new_value
-} { 
-    listens for the following events: 
-} { 
+} {
+    listens for the following events:
+} {
     # Hm. Nothing, it seems
-}   
-
-
+}
