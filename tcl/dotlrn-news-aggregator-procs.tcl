@@ -91,7 +91,7 @@ ad_proc -public dotlrn_news_aggregator::add_applet_to_community {
 ad_proc -public dotlrn_news_aggregator::remove_applet_from_community {
     community_id
 } {
-    remove the applet from the community
+    Remove the applet from the community.
 } {
     ad_return_complaint 1 "[applet_key] remove_applet_from_community not implemented!"
 }
@@ -99,7 +99,7 @@ ad_proc -public dotlrn_news_aggregator::remove_applet_from_community {
 ad_proc -public dotlrn_news_aggregator::add_user {
     user_id
 } {
-    one time user-specifuc init
+    Nothing to do here.
 } {
     # noop
 }
@@ -107,6 +107,7 @@ ad_proc -public dotlrn_news_aggregator::add_user {
 ad_proc -public dotlrn_news_aggregator::remove_user {
     user_id
 } {
+    Nothing to do here.
 } {
     # noop
 }
@@ -209,7 +210,7 @@ ad_proc -public dotlrn_news_aggregator::change_event_handler {
     old_value
     new_value
 } {
-    listens for the following events:
+    Nothing to do here.
 } {
     # Hm. Nothing, it seems
 }
