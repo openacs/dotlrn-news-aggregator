@@ -1,7 +1,7 @@
 ad_library {
     Procedures for registering implementations for the
-    dotlrn nwes-aggregator package. 
-    
+    dotlrn nwes-aggregator package.
+
     @creation-date 8 May 2003
     @author Simon Carstensen (simon@collaboraid.biz)
     @cvs-id $Id$
@@ -44,7 +44,7 @@ ad_proc -private dotlrn_news_aggregator::register_portal_datasource_impl {} {
 	    ChangeEventHandler dotlrn_news_aggregator::change_event_handler
         }
     }
-    
+
     acs_sc::impl::new_from_spec -spec $spec
 }
 
